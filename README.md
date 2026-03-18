@@ -49,7 +49,7 @@
 
 ## Key URLs
 - Google Sheet: https://docs.google.com/spreadsheets/d/1D0z2snm8jlZdUu04kAr0moDG-4-8wiQ-2AYaF79qO0Y/edit?usp=sharing
-- Apps Script URL: 
+- Apps Script URL: https://script.google.com/macros/s/AKfycbx57J5RersTALXp4LYM1Y-8Eh2t5RyrKu3v7rmONUey_6WgDs0kUrkQQuC8_7TfLG7j/exec
 - GitHub Repository: 
 - GitHub Pages URL: 
 - StarChapter DEI Page:
