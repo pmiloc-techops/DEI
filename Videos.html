@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEI Videos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: transparent;
+      line-height: 1.6;
+    }
+    .video-card {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #f9f9f9;
+    }
+    .video-card iframe {
+      display: block;
+      width: 100%;
+      height: 250px;
+    }
+    .video-title {
+      padding: 8px 10px;
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+    }
+    .status-msg { color: #333; font-size: 14px; }
+    .error-msg  { color: #c00; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div id="video-container">
+    <p class="status-msg">Loading videos...</p>
+  </div>
+  <script>
+    const FEED_URL = "https://script.google.com/macros/s/AKfycbykjHKOH5AL-kSHE8zOPaXq6VtLDhDg2dj3VgO-9kvrjunaEfnZdPELwBs77ug2rwa3/exec?sheet=videos";
+
+    function toEmbedUrl(url) {
+      try {
+        const u = new URL(url.trim());
+        let videoId = u.searchParams.get("v");
+        if (!videoId) {
+          videoId = u.pathname.split("/").filter(Boolean).pop();
+        }
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+      } catch {
+        return null;
+      }
+    }
+
+    fetch(FEED_URL)
+      .then(r => r.json())
+      .then(videos => {
+        const container = document.getElementById("video-container");
+        if (!videos.length) {
+          container.innerHTML = "<p class='status-msg'>No videos posted yet.</p>";
+          return;
+        }
+        container.innerHTML = videos.map(v => {
+          const embedUrl = toEmbedUrl(v.url);
+          if (!embedUrl) return "";
+          return `
+            <div class="video-card">
+              <iframe src="${embedUrl}" title="${v.title}"
+                frameborder="0" allowfullscreen></iframe>
+              ${v.title ? `<div class="video-title">${v.title}</div>` : ""}
+            </div>`;
+        }).join("");
+      })
+      .catch(() => {
+        document.getElementById("video-container").innerHTML =
+          "<p class='error-msg'>Unable to load videos. Please try again later.</p>";
+      });
+  </script>
+</body>
+</html>
