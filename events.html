@@ -15,7 +15,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 15px;
+      margin-bottom: 0px;
+      padding: 10px;
+      justify-content: left;
     }
     .filter-btn {
       padding: 0.5rem 1rem;
@@ -29,45 +31,24 @@
     .filter-btn.active {
       background: #e0f7fa;
     }
-    .event-card {
-      margin-bottom: 15px;
+    #event-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       padding: 10px;
+    }
+    .event-card {
+      padding: 15px;
       border: 1px solid #ddd;
-      border-radius: 4px;
-      background: #f9f9f9;
+      border-radius: 8px;
+      background: #fafafa;
     }
     .event-title {
-      margin: 0 0 4px 0;
-      color: #000;
+      margin: 0;
       font-size: 18px;
+      font-weight: normal;
+      color: #000;
     }
-    .event-meta {
-      font-size: 13px;
-      color: #4f17a9;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .event-theme {
-      display: inline-block;
-      font-size: 12px;
-      background: #f0e6ff;
-      color: #4f17a9;
-      border-radius: 4px;
-      padding: 2px 8px;
-      margin-bottom: 6px;
-    }
-    .event-description {
-      margin: 6px 0;
-      font-size: 14px;
-      color: #333;
-    }
-    .event-link {
-      color: #4f17a9;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .event-link:hover { text-decoration: underline; }
     .status-msg { color: #333; font-size: 14px; }
     .error-msg  { color: #c00; font-size: 14px; }
   </style>
@@ -79,7 +60,7 @@
   </div>
 
   <script>
-    const FEED_URL = "https://script.google.com/macros/s/AKfycbzVoTu4QpWmfTrJkZo5yl7oGGEPbZTniP8onaEOJVXivrcCx9EwIOvzdTp9GwOtjvDM/exec?sheet=events";
+    const FEED_URL = "https://script.google.com/macros/s/AKfycbxBtICC9xKTQ-qc7Xvu-qb0_a9v-XXtZzQ8Qw2Bt8Jv39pA0hZqJCGxtH8jmqTkA60H/exec?sheet=events";
 
     function renderFilters(themes) {
       const bar = document.getElementById("filter-bar");
@@ -115,23 +96,18 @@
           return;
         }
 
-        // Build unique theme list preserving sheet order
         const themes = [...new Set(events.map(e => e.theme).filter(Boolean))];
         renderFilters(themes);
 
         container.innerHTML = events.map(ev => `
           <div class="event-card" data-theme="${ev.theme}">
-            <h3 class="event-title">${ev.title}</h3>
-            <div class="event-meta">${ev.date}</div>
-            ${ev.theme ? `<span class="event-theme">${ev.theme}</span>` : ""}
-            ${ev.description ? `<p class="event-description">${ev.description}</p>` : ""}
-            ${ev.link && ev.link !== "undefined" ? `<a class="event-link" href="${ev.link}" target="_blank" rel="noopener">Learn More »</a>` : ""}
+            <h3 class="event-title">${ev.date} — ${ev.title}</h3>
           </div>
         `).join("");
       })
       .catch(() => {
         document.getElementById("event-container").innerHTML =
-          "<p class='error-msg'>Unable to load events. Please try again later.</p>";
+          "<p class='error-msg'>Unable to load events. Please try again later.</p></p>";
       });
   </script>
 </body>
