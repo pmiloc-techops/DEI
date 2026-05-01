@@ -1,6 +1,11 @@
 {
   "blogs": [
     {
+      "title": "MS Awareness Month",
+      "description": "World MS Day is an annual event aimed at raising public understanding and support for those living with Multiple Sclerosis (MS), a chronic condition affecting the central nervous system. This day highlights the challenges faced by people with MS, promoting advocacy for improved resources,\ntreatment, and research. Observed internationally, the day includes educational events, fundraising, and support gatherings, symbolized by orange for hope and resilience. ",
+      "link": "https://mscanada.ca/msawarenessmonth"
+    },
+    {
       "title": "Mental Health Month",
       "description": "Mental health is wealth, especially during Mental Health Awareness Month, which is celebrated in May. The stigma around mental health and treatment has long existed, even though this has started to change. Aims to raise awareness and educate the public about mental illnesses and reduce the stigma that surrounds mental illnesses.",
       "link": "https://www.wechu.org/mental-health/may-mental-health-week"
