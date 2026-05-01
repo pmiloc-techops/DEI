@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEI Posters</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: transparent;
+    }
+    #slideshow {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      text-align: center;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: contain;
+    }
+    .slide-name {
+      font-size: 13px;
+      color: #555;
+      padding: 6px 0;
+    }
+    #dot-bar {
+      text-align: center;
+      padding: 8px 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .dot.active { background: #4f17a9; }
+    .status-msg { color: #333; font-size: 14px; padding: 10px; }
+    .error-msg  { color: #c00; font-size: 14px; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="slideshow">
+    <p class="status-msg">Loading posters...</p>
+  </div>
+  <div id="dot-bar"></div>
+
+  <script>
+    const FEED_URL = "https://raw.githubusercontent.com/pmiloc-techops/DEI/main/dei-data.json";
+    const INTERVAL = 4000; // milliseconds between slides
+
+    let current = 0;
+    let timer = null;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll(".slide");
+      const dots   = document.querySelectorAll(".dot");
+      slides.forEach(s => s.classList.remove("active"));
+      dots.forEach(d => d.classList.remove("active"));
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add("active");
+      dots[current].classList.add("active");
+    }
+
+    function startTimer() {
+      timer = setInterval(() => showSlide(current + 1), INTERVAL);
+    }
+
+    fetch(FEED_URL)
+      .then(r => r.json())
+      .then(data => {
+        const posters   = data.posters;
+        const slideshow = document.getElementById("slideshow");
+        const dotBar    = document.getElementById("dot-bar");
+
+        if (!posters || !posters.length) {
+          slideshow.innerHTML = "<p class='status-msg'>No posters available.</p>";
+          return;
+        }
+
+        slideshow.innerHTML = posters.map((p, i) => `
+          <div class="slide ${i === 0 ? 'active' : ''}">
+            <img src="${p.url}" alt="${p.name}">
+            <div class="slide-name">${p.name}</div>
+          </div>
+        `).join("");
+
+        dotBar.innerHTML = posters.map((_, i) => `
+          <span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
+        `).join("");
+
+        dotBar.querySelectorAll(".dot").forEach(dot => {
+          dot.addEventListener("click", () => {
+            clearInterval(timer);
+            showSlide(parseInt(dot.dataset.index));
+            startTimer();
+          });
+        });
+
+        startTimer();
+      })
+      .catch(() => {
+        document.getElementById("slideshow").innerHTML =
+          "<p class='error-msg'>Unable to load posters. Please try again later.</p>";
+      });
+  </script>
+</body>
+</html>
