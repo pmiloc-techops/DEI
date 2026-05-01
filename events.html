@@ -28,9 +28,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
     }
-    .filter-btn.active {
-      background: #e0f7fa;
-    }
+    .filter-btn.active { background: #e0f7fa; }
     #event-container {
       display: flex;
       flex-direction: column;
@@ -58,24 +56,19 @@
   <div id="event-container">
     <p class="status-msg">Loading events...</p>
   </div>
-
   <script>
-    const FEED_URL = "https://script.google.com/macros/s/AKfycbxBtICC9xKTQ-qc7Xvu-qb0_a9v-XXtZzQ8Qw2Bt8Jv39pA0hZqJCGxtH8jmqTkA60H/exec?sheet=events";
+    const FEED_URL = "https://raw.githubusercontent.com/pmiloc-techops/DEI/main/dei-data.json";
 
     function renderFilters(themes) {
       const bar = document.getElementById("filter-bar");
       const all = ["All", ...themes];
-
       bar.innerHTML = all.map((t, i) => `
-        <button class="filter-btn ${i === 0 ? 'active' : ''}"
-          data-theme="${t}">${t}</button>
+        <button class="filter-btn ${i === 0 ? 'active' : ''}" data-theme="${t}">${t}</button>
       `).join("");
-
       bar.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", () => {
           bar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
           btn.classList.add("active");
-
           const selected = btn.dataset.theme;
           document.querySelectorAll(".event-card").forEach(card => {
             card.style.display =
@@ -87,18 +80,16 @@
 
     fetch(FEED_URL)
       .then(r => r.json())
-      .then(events => {
+      .then(data => {
+        const events = data.events;
         const container = document.getElementById("event-container");
-
         if (!events.length) {
           container.innerHTML = "<p class='status-msg'>No upcoming events.</p>";
           document.getElementById("filter-bar").style.display = "none";
           return;
         }
-
         const themes = [...new Set(events.map(e => e.theme).filter(Boolean))];
         renderFilters(themes);
-
         container.innerHTML = events.map(ev => `
           <div class="event-card" data-theme="${ev.theme}">
             <h3 class="event-title">${ev.date} — ${ev.title}</h3>
@@ -107,7 +98,7 @@
       })
       .catch(() => {
         document.getElementById("event-container").innerHTML =
-          "<p class='error-msg'>Unable to load events. Please try again later.</p></p>";
+          "<p class='error-msg'>Unable to load events. Please try again later.</p>";
       });
   </script>
 </body>
