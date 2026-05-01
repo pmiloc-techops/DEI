@@ -38,7 +38,7 @@
     <p class="status-msg">Loading videos...</p>
   </div>
   <script>
-    const FEED_URL = "https://script.google.com/macros/s/AKfycbzVoTu4QpWmfTrJkZo5yl7oGGEPbZTniP8onaEOJVXivrcCx9EwIOvzdTp9GwOtjvDM/exec?sheet=videos";
+    const FEED_URL = "https://raw.githubusercontent.com/pmiloc-techops/DEI/main/dei-data.json";
 
     function toEmbedUrl(url) {
       try {
@@ -55,7 +55,8 @@
 
     fetch(FEED_URL)
       .then(r => r.json())
-      .then(videos => {
+      .then(data => {
+        const videos = data.videos;
         const container = document.getElementById("video-container");
         if (!videos.length) {
           container.innerHTML = "<p class='status-msg'>No videos posted yet.</p>";
