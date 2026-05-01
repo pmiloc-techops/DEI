@@ -35,17 +35,9 @@
       text-decoration: none;
       font-size: 14px;
     }
-    .blog-link:hover {
-      text-decoration: underline;
-    }
-    .status-msg {
-      color: #333;
-      font-size: 14px;
-    }
-    .error-msg {
-      color: #c00;
-      font-size: 14px;
-    }
+    .blog-link:hover { text-decoration: underline; }
+    .status-msg { color: #333; font-size: 14px; }
+    .error-msg  { color: #c00; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -53,12 +45,14 @@
     <p class="status-msg">Loading blogs...</p>
   </div>
   <script>
-    const FEED_URL = "https://script.google.com/macros/s/AKfycbzVoTu4QpWmfTrJkZo5yl7oGGEPbZTniP8onaEOJVXivrcCx9EwIOvzdTp9GwOtjvDM/exec?sheet=blogs";
+    const FEED_URL = "https://raw.githubusercontent.com/pmiloc-techops/DEI/main/dei-data.json";
+
     fetch(FEED_URL)
-      .then(response => response.json())
-      .then(blogs => {
+      .then(r => r.json())
+      .then(data => {
+        const blogs = data.blogs;
         const container = document.getElementById("blog-container");
-        if (blogs.length === 0) {
+        if (!blogs.length) {
           container.innerHTML = "<p class='status-msg'>No blogs posted yet.</p>";
           return;
         }
