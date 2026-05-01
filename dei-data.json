@@ -1,0 +1,148 @@
+{
+  "blogs": [
+    {
+      "title": "MS Awareness Month",
+      "description": "World MS Day is an annual event aimed at raising public understanding and support for those living with Multiple Sclerosis (MS), a chronic condition affecting the central nervous system. This day highlights the challenges faced by people with MS, promoting advocacy for improved resources,\ntreatment, and research. Observed internationally, the day includes educational events, fundraising, and support gatherings, symbolized by orange for hope and resilience. ",
+      "link": "https://mscanada.ca/msawarenessmonth"
+    },
+    {
+      "title": "Mental Health Month",
+      "description": "Mental health is wealth, especially during Mental Health Awareness Month, which is celebrated in May. The stigma around mental health and treatment has long existed, even though this has started to change. Aims to raise awareness and educate the public about mental illnesses and reduce the stigma that surrounds mental illnesses.",
+      "link": "https://www.wechu.org/mental-health/may-mental-health-week"
+    },
+    {
+      "title": "Lupus Awareness Month",
+      "description": "Refer Link",
+      "link": "https://www.lupusresearch.org/"
+    },
+    {
+      "title": "Jewish Heritage Month",
+      "description": "Canada is home to an estimated 400,000 people of Jewish heritage, making it the fourth-largest Jewish community in the world. During this month, we also recognize the courage, determination, and resilience that members of Jewish communities have shown throughout history.This month, celebrate the history and culture of Jewish Canadians. Learning about their diverse heritage and religion allows us to better understand those around us. This month, commit to learning about how to fight antisemitism.\n",
+      "link": "http://jewishheritage.ca/"
+    },
+    {
+      "title": "Asian Heritage Month",
+      "description": "Asian Heritage Month is an opportunity for us to learn more about the many achievements and contributions of Canadians of Asian heritage who, throughout our history, have done so much to make Canada the country we know and love. ",
+      "link": "https://www.canada.ca/en/canadian-heritage/campaigns/asian-heritage-month.html"
+    },
+    {
+      "title": "National Accessability Week",
+      "description": "A week to celebrate the valuable contributions and accomplishments of Canadians with disabilities and to recognize the need to promote a culture of  inclusion to combat the ongoing discrimination against persons with disabilities.",
+      "link": "https://easterseals.ca/en/redshirtday/"
+    },
+    {
+      "title": "World day for cultural diversity for dialog and development",
+      "description": "Refer Link",
+      "link": "https://www.twinkl.ca/event/world-day-for-cultural-diversity-for-dialogue-and-development-2025#:~:text=When%20is%20World%20Day%20for,every%20year%20on%2021st%20May."
+    },
+    {
+      "title": "Victoria Day",
+      "description": "Refer Link",
+      "link": "https://nationaltoday.com/victoria-day/#:~:text=Victoria%20Day%20%E2%80%93%20May%2019%2C%202025&text=To%20Canadians%2C%20Victoria%20Day%20%E2%80%94%20the,arrival%20of%20warmer%2C%20greener%20days."
+    },
+    {
+      "title": "International Day Against Homophobia,Biphobia and  Transphobia.",
+      "description": "What is IDAHOBIT?\nThe International Day Against Homophobia, Transphobia, and Biphobia was created in 2004 to draw attention to the violence and discrimination experienced by lesbian, gay, bisexual, trans, intersex people, and all of those with diverse sexual orientations, gender identities or expressions, and sex characteristics.\n\nInitially managed by the IDAHO Committee, the initiative is now collectively managed in collaboration between regional and thematic networks working to advance the rights of people with diverse sexual orientations, gender identities or expressions, and sex characteristics. This collaboration brings together organisations and initiatives at global, regional, national, and local levels.\n\nThe International Day Against Homophobia, Transphobia, and Biphobia is currently celebrated in more than 130 countries, including 37 where same-sex acts are illegal. Thousands of initiatives, big and small, are reported throughout the planet.\n\nThe International Day Against Homophobia, Transphobia, and Biphobia has received official recognition from several States, international institutions such as the European Parliament, and by countless local authorities. Most United Nations agencies also mark the Day with specific events.",
+      "link": "https://en.wikipedia.org/wiki/International_Day_Against_Homophobia,_Biphobia_and_Transphobia"
+    },
+    {
+      "title": "International Day Of Families",
+      "description": "A day which provides an opportunity to promote awareness of issues relating to families and to increase the knowledge of the social, economic, and \ndemographic processes affecting families.",
+      "link": "https://www.twinkl.ca/event/international-day-of-families-scotland-2025"
+    },
+    {
+      "title": "Mothers Day",
+      "description": "Refer Link",
+      "link": "https://www.timeanddate.com/holidays/canada/mother-day#:~:text=Mothers'%20Day%20is%20not%20a,Sunday%20opening%20hours%20in%20Canada."
+    },
+    {
+      "title": "Red Dress Day",
+      "description": "National Day of Awareness for Missing and Murdered Indigenous Women and Girls",
+      "link": "https://www.wisemove.ca/post/red-dress-day-everything-you-need-to-know"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Asian Heritage Month",
+      "url": "https://youtu.be/q_DipG6x4xI?si=LDdGGs5Fwfy_IdZ8"
+    },
+    {
+      "title": "Lupus Awareness Month",
+      "url": "https://youtu.be/yyf7PZ1NQ5g?si=Eyc5_xjj0dDIrIMH"
+    },
+    {
+      "title": "Jewish Heritage Month",
+      "url": "https://youtu.be/RFGu4j8MMRk?si=e2sXZJALBu7-R4o8"
+    },
+    {
+      "title": "International Day of Families",
+      "url": "https://youtu.be/JJtcEubpIS8?si=yMtJFk0BeDF4NUgL"
+    },
+    {
+      "title": "Mental Health Month",
+      "url": "https://youtu.be/sWp_1DjsyU4?si=nRlTFrkQvB4q5uED"
+    }
+  ],
+  "events": [
+    {
+      "title": "Red Dress Day",
+      "date": "May 5th ",
+      "theme": "LGBTQ2S+"
+    },
+    {
+      "title": "Mothers Day",
+      "date": "May 10",
+      "theme": ""
+    },
+    {
+      "title": "International Day Of Families",
+      "date": "May 15",
+      "theme": ""
+    },
+    {
+      "title": "International Day Against Homophobia,Biphobia and  Transphobia.",
+      "date": "May 17",
+      "theme": "LGBTQ2S+"
+    },
+    {
+      "title": "Victoria Day",
+      "date": "May 18",
+      "theme": ""
+    },
+    {
+      "title": "World day for cultural diversity for dialog and development",
+      "date": "May 21",
+      "theme": "Anti Racism"
+    },
+    {
+      "title": "National Accessability Week",
+      "date": "May 25 to May 31",
+      "theme": "Accessibility"
+    },
+    {
+      "title": "Asian Heritage Month",
+      "date": "All Month",
+      "theme": "Anti Racism"
+    },
+    {
+      "title": "Jewish Heritage Month",
+      "date": "All Month",
+      "theme": "Anti Racism"
+    },
+    {
+      "title": "Lupus Awareness Month",
+      "date": "All Month",
+      "theme": ""
+    },
+    {
+      "title": "Mental Health Month",
+      "date": "All Month",
+      "theme": "Accessibility"
+    },
+    {
+      "title": "MS Awareness Month",
+      "date": "All Month",
+      "theme": "Accessibility"
+    }
+  ]
+}
