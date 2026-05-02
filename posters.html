@@ -27,11 +27,6 @@
       max-height: 600px;
       object-fit: contain;
     }
-    .slide-name {
-      font-size: 13px;
-      color: #555;
-      padding: 6px 0;
-    }
     #dot-bar {
       text-align: center;
       padding: 8px 0;
@@ -46,6 +41,23 @@
       cursor: pointer;
     }
     .dot.active { background: #4f17a9; }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      z-index: 10;
+      user-select: none;
+    }
+    .arrow:hover { background: rgba(0, 0, 0, 0.7); }
+    #prev { left: 8px; }
+    #next { right: 8px; }
     .status-msg { color: #333; font-size: 14px; padding: 10px; }
     .error-msg  { color: #c00; font-size: 14px; padding: 10px; }
   </style>
@@ -58,7 +70,7 @@
 
   <script>
     const FEED_URL = "https://raw.githubusercontent.com/pmiloc-techops/DEI/main/dei-data.json";
-    const INTERVAL = 4000; // milliseconds between slides
+    const INTERVAL = 4000;
 
     let current = 0;
     let timer = null;
@@ -89,16 +101,31 @@
           return;
         }
 
-        slideshow.innerHTML = posters.map((p, i) => `
-          <div class="slide ${i === 0 ? 'active' : ''}">
-            <img src="${p.url}" alt="${p.name}">
-            <div class="slide-name">${p.name}</div>
-          </div>
-        `).join("");
+        slideshow.innerHTML = `
+          <button class="arrow" id="prev">&#8592;</button>
+          ${posters.map((p, i) => `
+            <div class="slide ${i === 0 ? 'active' : ''}">
+              <img src="${p.url}" alt="${p.name}">
+            </div>
+          `).join("")}
+          <button class="arrow" id="next">&#8594;</button>
+        `;
 
         dotBar.innerHTML = posters.map((_, i) => `
           <span class="dot ${i === 0 ? 'active' : ''}" data-index="${i}"></span>
         `).join("");
+
+        document.getElementById("prev").addEventListener("click", () => {
+          clearInterval(timer);
+          showSlide(current - 1);
+          startTimer();
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+          clearInterval(timer);
+          showSlide(current + 1);
+          startTimer();
+        });
 
         dotBar.querySelectorAll(".dot").forEach(dot => {
           dot.addEventListener("click", () => {
