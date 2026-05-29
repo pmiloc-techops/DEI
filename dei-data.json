@@ -1,148 +1,100 @@
 {
-  "blogs": [
-    {
-      "title": "Red Dress Day",
-      "description": "National Day of Awareness for Missing and Murdered Indigenous Women and Girls",
-      "link": "https://www.wisemove.ca/post/red-dress-day-everything-you-need-to-know"
-    },
-    {
-      "title": "Mothers Day",
-      "description": "Many people in Canada express their gratitude towards mothers and mother figures on Mother?s Day. Mother figures may include step-mothers, mothers-in-law, guardians (eg. foster parents), and family friends. It is the time for people to thank mothers and mother figures who took the time care for them and help them through life?s challenges.",
-      "link": "https://www.timeanddate.com/holidays/canada/mother-day#:~:text=Mothers'%20Day%20is%20not%20a,Sunday%20opening%20hours%20in%20Canada."
-    },
-    {
-      "title": "International Day Of Families",
-      "description": "A day which provides an opportunity to promote awareness of issues relating to families and to increase the knowledge of the social, economic, and \ndemographic processes affecting families.",
-      "link": "https://www.twinkl.ca/event/international-day-of-families-scotland-2025"
-    },
-    {
-      "title": "International Day Against Homophobia,Biphobia and  Transphobia.",
-      "description": "What is IDAHOBIT?\nThe International Day Against Homophobia, Transphobia, and Biphobia was created in 2004 to draw attention to the violence and discrimination experienced by lesbian, gay, bisexual, trans, intersex people, and all of those with diverse sexual orientations, gender identities or expressions, and sex characteristics.\n\nInitially managed by the IDAHO Committee, the initiative is now collectively managed in collaboration between regional and thematic networks working to advance the rights of people with diverse sexual orientations, gender identities or expressions, and sex characteristics. This collaboration brings together organisations and initiatives at global, regional, national, and local levels.\n\n",
-      "link": "https://en.wikipedia.org/wiki/International_Day_Against_Homophobia,_Biphobia_and_Transphobia"
-    },
-    {
-      "title": "Victoria Day",
-      "description": "To Canadians, Victoria Day ? the Monday before May 25 ? on May 18 this year, signifies the beginning of summer and the arrival of warmer, greener days. But, much like Independence Day in the U.S., Victoria Day has more colonial roots than are usually discussed amidst all the fireworks and jolly gatherings. This day marks the birthday of Queen Victoria, who was the ruling monarch at the time of Canada?s birth as a country in 1867. It?s a day to celebrate all the wonderful things that make Canada, Canada.",
-      "link": "https://nationaltoday.com/victoria-day/#:~:text=Victoria%20Day%20%E2%80%93%20May%2019%2C%202025&text=To%20Canadians%2C%20Victoria%20Day%20%E2%80%94%20the,arrival%20of%20warmer%2C%20greener%20days."
-    },
-    {
-      "title": "World day for cultural diversity for dialog and development",
-      "description": "World Day for Cultural Diversity for Dialogue and Development is a very important and significant day. It's also a heck of a mouthful to say out loud, but don't let that deter you from discovering more about what this significant and essential day is trying to accomplish.\n\nWorld Day for Cultural Diversity for Dialogue and Development, sometimes just known as World Day for Cultural Diversity, is a global event led by UNESCO and supported by the United Nations. It enables people all around the world to reflect on what diversity is within our culture and cultural heritage. It's also a time to think about why cultural diversity continues to matter in today?s world, and to discuss important issues affecting people of different cultures.\n\n\n",
-      "link": "https://www.twinkl.ca/event/world-day-for-cultural-diversity-for-dialogue-and-development-2025#:~:text=When%20is%20World%20Day%20for,every%20year%20on%2021st%20May."
-    },
-    {
-      "title": "National Accessability Week",
-      "description": "A week to celebrate the valuable contributions and accomplishments of Canadians with disabilities and to recognize the need to promote a culture of  inclusion to combat the ongoing discrimination against persons with disabilities.",
-      "link": "https://easterseals.ca/en/redshirtday/"
-    },
-    {
-      "title": "Asian Heritage Month",
-      "description": "Asian Heritage Month is an opportunity for us to learn more about the many achievements and contributions of Canadians of Asian heritage who, throughout our history, have done so much to make Canada the country we know and love. ",
-      "link": "https://www.canada.ca/en/canadian-heritage/campaigns/asian-heritage-month.html"
-    },
-    {
-      "title": "Jewish Heritage Month",
-      "description": "Canada is home to an estimated 400,000 people of Jewish heritage, making it the fourth-largest Jewish community in the world. During this month, we also recognize the courage, determination, and resilience that members of Jewish communities have shown throughout history.This month, celebrate the history and culture of Jewish Canadians. Learning about their diverse heritage and religion allows us to better understand those around us. This month, commit to learning about how to fight antisemitism.\n",
-      "link": "http://jewishheritage.ca/"
-    },
-    {
-      "title": "Lupus Awareness Month",
-      "description": "Approximately 50%?90% of people with lupus identify fatigue as one of their primary symptoms. A number of factors can contribute to fatigue in lupus, including the disease itself, psychological factors, lifestyle factors, and medications.\nNo matter the cause, it?s clear that fatigue can significantly impact patients? quality of life, including lessening the ability to function at home and at work.Today, doctors have more options to help patients manage lupus effectively, because treatments have expanded significantly in recent decades",
-      "link": "https://www.lupusresearch.org/"
-    },
-    {
-      "title": "Mental Health Awareness",
-      "description": "Mental health is wealth, especially during Mental Health Awareness Month, which is celebrated in May. The stigma around mental health and treatment has long existed, even though this has started to change. Aims to raise awareness and educate the public about mental illnesses and reduce the stigma that surrounds mental illnesses.",
-      "link": "https://www.wechu.org/mental-health/may-mental-health-week"
-    },
-    {
-      "title": "MS Awareness Month",
-      "description": "World MS Day is an annual event aimed at raising public understanding and support for those living with Multiple Sclerosis (MS), a chronic condition affecting the central nervous system. This day highlights the challenges faced by people with MS, promoting advocacy for improved resources,\ntreatment, and research. Observed internationally, the day includes educational events, fundraising, and support gatherings, symbolized by orange for hope and resilience. ",
-      "link": "https://mscanada.ca/msawarenessmonth"
-    }
-  ],
-  "videos": [
-    {
-      "title": "Asian Heritage Month",
-      "url": "https://youtu.be/q_DipG6x4xI?si=LDdGGs5Fwfy_IdZ8"
-    },
-    {
-      "title": "Lupus Awareness Month",
-      "url": "https://youtu.be/yyf7PZ1NQ5g?si=Eyc5_xjj0dDIrIMH"
-    },
-    {
-      "title": "Jewish Heritage Month",
-      "url": "https://youtu.be/RFGu4j8MMRk?si=e2sXZJALBu7-R4o8"
-    },
-    {
-      "title": "International Day of Families",
-      "url": "https://youtu.be/JJtcEubpIS8?si=yMtJFk0BeDF4NUgL"
-    },
-    {
-      "title": "Mental Health Month",
-      "url": "https://youtu.be/sWp_1DjsyU4?si=nRlTFrkQvB4q5uED"
-    }
-  ],
   "events": [
     {
       "title": "Red Dress Day",
       "date": "May 5th ",
-      "theme": "LGBTQ2S+"
+      "description": "National Day of Awareness for Missing and Murdered Indigenous Women and Girls",
+      "readMore": "https://www.wisemove.ca/post/red-dress-day-everything-you-need-to-know",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "Mothers Day",
       "date": "May 10",
-      "theme": ""
+      "description": "Many people in Canada express their gratitude towards mothers and mother figures on Mother?s Day. Mother figures may include step-mothers, mothers-in-law, guardians (eg. foster parents), and family friends. It is the time for people to thank mothers and mother figures who took the time care for them and help them through life?s challenges.",
+      "readMore": "https://www.timeanddate.com/holidays/canada/mother-day#:~:text=Mothers'%20Day%20is%20not%20a,Sunday%20opening%20hours%20in%20Canada.",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "International Day Of Families",
       "date": "May 15",
-      "theme": ""
+      "description": "A day which provides an opportunity to promote awareness of issues relating to families and to increase the knowledge of the social, economic, and \ndemographic processes affecting families.",
+      "readMore": "https://www.twinkl.ca/event/international-day-of-families-scotland-2025",
+      "moreLinks": "",
+      "videoLink": "https://youtu.be/JJtcEubpIS8?si=yMtJFk0BeDF4NUgL"
     },
     {
       "title": "International Day Against Homophobia,Biphobia and  Transphobia.",
       "date": "May 17",
-      "theme": "LGBTQ2S+"
+      "description": "What is IDAHOBIT?\nThe International Day Against Homophobia, Transphobia, and Biphobia was created in 2004 to draw attention to the violence and discrimination experienced by lesbian, gay, bisexual, trans, intersex people, and all of those with diverse sexual orientations, gender identities or expressions, and sex characteristics.\n\nInitially managed by the IDAHO Committee, the initiative is now collectively managed in collaboration between regional and thematic networks working to advance the rights of people with diverse sexual orientations, gender identities or expressions, and sex characteristics. This collaboration brings together organisations and initiatives at global, regional, national, and local levels.\n\n",
+      "readMore": "https://en.wikipedia.org/wiki/International_Day_Against_Homophobia,_Biphobia_and_Transphobia",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "Victoria Day",
       "date": "May 18",
-      "theme": ""
+      "description": "To Canadians, Victoria Day ? the Monday before May 25 ? on May 18 this year, signifies the beginning of summer and the arrival of warmer, greener days. But, much like Independence Day in the U.S., Victoria Day has more colonial roots than are usually discussed amidst all the fireworks and jolly gatherings. This day marks the birthday of Queen Victoria, who was the ruling monarch at the time of Canada?s birth as a country in 1867. It?s a day to celebrate all the wonderful things that make Canada, Canada.",
+      "readMore": "https://nationaltoday.com/victoria-day/#:~:text=Victoria%20Day%20%E2%80%93%20May%2019%2C%202025&text=To%20Canadians%2C%20Victoria%20Day%20%E2%80%94%20the,arrival%20of%20warmer%2C%20greener%20days.",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "World day for cultural diversity for dialog and development",
       "date": "May 21",
-      "theme": "Anti Racism"
+      "description": "World Day for Cultural Diversity for Dialogue and Development is a very important and significant day. It's also a heck of a mouthful to say out loud, but don't let that deter you from discovering more about what this significant and essential day is trying to accomplish.\n\nWorld Day for Cultural Diversity for Dialogue and Development, sometimes just known as World Day for Cultural Diversity, is a global event led by UNESCO and supported by the United Nations. It enables people all around the world to reflect on what diversity is within our culture and cultural heritage. It's also a time to think about why cultural diversity continues to matter in today?s world, and to discuss important issues affecting people of different cultures.\n\n\n",
+      "readMore": "https://www.twinkl.ca/event/world-day-for-cultural-diversity-for-dialogue-and-development-2025#:~:text=When%20is%20World%20Day%20for,every%20year%20on%2021st%20May.",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "National Accessability Week",
       "date": "May 25 to May 31",
-      "theme": "Accessibility"
+      "description": "A week to celebrate the valuable contributions and accomplishments of Canadians with disabilities and to recognize the need to promote a culture of  inclusion to combat the ongoing discrimination against persons with disabilities.",
+      "readMore": "https://easterseals.ca/en/redshirtday/",
+      "moreLinks": "",
+      "videoLink": ""
     },
     {
       "title": "Asian Heritage Month",
       "date": "May",
-      "theme": "Anti Racism"
+      "description": "Asian Heritage Month is an opportunity for us to learn more about the many achievements and contributions of Canadians of Asian heritage who, throughout our history, have done so much to make Canada the country we know and love. ",
+      "readMore": "https://www.canada.ca/en/canadian-heritage/campaigns/asian-heritage-month.html",
+      "moreLinks": "",
+      "videoLink": "https://youtu.be/q_DipG6x4xI?si=LDdGGs5Fwfy_IdZ8"
     },
     {
       "title": "Jewish Heritage Month",
       "date": "May",
-      "theme": "Anti Racism"
+      "description": "Canada is home to an estimated 400,000 people of Jewish heritage, making it the fourth-largest Jewish community in the world. During this month, we also recognize the courage, determination, and resilience that members of Jewish communities have shown throughout history.This month, celebrate the history and culture of Jewish Canadians. Learning about their diverse heritage and religion allows us to better understand those around us. This month, commit to learning about how to fight antisemitism.\n",
+      "readMore": "http://jewishheritage.ca/",
+      "moreLinks": "",
+      "videoLink": "https://youtu.be/RFGu4j8MMRk?si=e2sXZJALBu7-R4o8"
     },
     {
       "title": "Lupus Awareness Month",
       "date": "May",
-      "theme": ""
+      "description": "Approximately 50%?90% of people with lupus identify fatigue as one of their primary symptoms. A number of factors can contribute to fatigue in lupus, including the disease itself, psychological factors, lifestyle factors, and medications.\nNo matter the cause, it?s clear that fatigue can significantly impact patients? quality of life, including lessening the ability to function at home and at work.Today, doctors have more options to help patients manage lupus effectively, because treatments have expanded significantly in recent decades",
+      "readMore": "https://www.lupusresearch.org/",
+      "moreLinks": "",
+      "videoLink": "https://youtu.be/yyf7PZ1NQ5g?si=Eyc5_xjj0dDIrIMH"
     },
     {
       "title": "Mental Health Month",
       "date": "May",
-      "theme": "Accessibility"
+      "description": "Mental health is wealth, especially during Mental Health Awareness Month, which is celebrated in May. The stigma around mental health and treatment has long existed, even though this has started to change. Aims to raise awareness and educate the public about mental illnesses and reduce the stigma that surrounds mental illnesses.",
+      "readMore": "https://www.wechu.org/mental-health/may-mental-health-week",
+      "moreLinks": "",
+      "videoLink": "https://youtu.be/sWp_1DjsyU4?si=nRlTFrkQvB4q5uED"
     },
     {
       "title": "MS Awareness Month",
       "date": "May",
-      "theme": "Accessibility"
+      "description": "World MS Day is an annual event aimed at raising public understanding and support for those living with Multiple Sclerosis (MS), a chronic condition affecting the central nervous system. This day highlights the challenges faced by people with MS, promoting advocacy for improved resources,\ntreatment, and research. Observed internationally, the day includes educational events, fundraising, and support gatherings, symbolized by orange for hope and resilience. ",
+      "readMore": "https://mscanada.ca/msawarenessmonth",
+      "moreLinks": "",
+      "videoLink": ""
     }
   ],
   "posters": [
