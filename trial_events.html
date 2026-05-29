@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEI Events</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    #event-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 4px 0;
+    }
+
+    /* ── SINGLE-DAY CARD ── */
+    .card-single {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .date-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      background: #f5f0ff;
+      border-radius: 8px;
+      padding: 8px 6px;
+      flex-shrink: 0;
+    }
+
+    .date-block .day {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #2d2d2d;
+      line-height: 1;
+    }
+
+    .date-block .month {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #7c5cbf;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .card-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .card-description {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5b21b6;
+      text-decoration: none;
+      border: 1.5px solid #d0b8f5;
+      border-radius: 6px;
+      padding: 4px 12px;
+      background: #fff;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .link-btn:hover {
+      background: #f3e8ff;
+      color: #4c1d95;
+    }
+
+    .link-btn svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+    }
+
+    /* ── MONTH-LONG CARD ── */
+    .card-month {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .card-month-video {
+      width: 130px;
+      min-width: 130px;
+      background: #f0ece8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-month-video iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 140px;
+      border: none;
+      display: block;
+    }
+
+    .card-month-video .no-video {
+      width: 100%;
+      height: 100%;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ede8f5;
+    }
+
+    .no-video svg {
+      width: 36px;
+      height: 36px;
+      color: #c4b0e0;
+    }
+
+    .card-month-body {
+      flex: 1;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .month-badge {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #5b7e3a;
+      background: #eaf4d6;
+      border-radius: 4px;
+      padding: 2px 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+      width: fit-content;
+    }
+
+    .card-month-body .card-title {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .card-month-body .card-description {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    /* ── DATE RANGE CARD ── */
+    .card-range {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .date-range-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      background: #f5f0ff;
+      border-radius: 8px;
+      padding: 8px 6px;
+      flex-shrink: 0;
+    }
+
+    .date-range-block .range-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #7c5cbf;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .status-msg { color: #555; font-size: 14px; font-family: Arial, sans-serif; }
+    .error-msg  { color: #c00; font-size: 14px; font-family: Arial, sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="event-container">
+    <p class="status-msg">Loading events...</p>
+  </div>
+
+  <script>
+    const FEED_URL = "https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/main/dei-data.json";
+
+    const EXTERNAL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+    const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+
+    function toEmbedUrl(url) {
+      if (!url) return null;
+      try {
+        const u = new URL(url.trim());
+        let videoId = u.searchParams.get("v");
+        if (!videoId) videoId = u.pathname.split("/").filter(Boolean).pop();
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+      } catch { return null; }
+    }
+
+    // Detect card type from date string
+    // "May" or "May 2026" or "May, 2026" → month-long
+    // "May 5" or "May 5th" or "May 5, 2026" → single day
+    // "May 25 to May 31" or "May 25-31" → range
+    function detectDateType(dateStr) {
+      const s = dateStr.trim();
+      // Month-only: just a month name optionally followed by year
+      if (/^[A-Za-z]+[,\s]*(\d{4})?$/.test(s)) return "month";
+      // Range: contains "to" or "-" between dates
+      if (/to|–|—/.test(s) || /\d\s*-\s*\d/.test(s)) return "range";
+      // Otherwise single day
+      return "single";
+    }
+
+    function parseSingleDate(dateStr) {
+      // Extract day number and month abbreviation
+      const s = dateStr.trim();
+      const monthMatch = s.match(/[A-Za-z]+/);
+      const dayMatch   = s.match(/\d+/);
+      if (!monthMatch || !dayMatch) return { day: "", month: "" };
+      const monthName = monthMatch[0];
+      const day = dayMatch[0];
+      // Try to get 3-letter abbreviation
+      const d = new Date(`${monthName} ${day}, 2000`);
+      const month = isNaN(d) ? monthName.substring(0,3).toUpperCase() : MONTHS[d.getMonth()];
+      return { day, month };
+    }
+
+    function parseMonthBadge(dateStr) {
+      // Return e.g. "MAY 2026" or just "MAY"
+      const s = dateStr.trim().replace(",", "");
+      const parts = s.split(/\s+/);
+      const monthName = parts[0];
+      const year = parts[1] || "";
+      const d = new Date(`${monthName} 1, 2000`);
+      const month = isNaN(d) ? monthName.toUpperCase() : MONTHS[d.getMonth()];
+      return year ? `${month} ${year}` : month;
+    }
+
+    function linksHtml(readMore, moreLinks) {
+      let html = "";
+      if (readMore && readMore !== "undefined" && readMore !== "") {
+        html += `<a class="link-btn" href="${readMore}" target="_blank" rel="noopener">${EXTERNAL_ICON} Read more</a>`;
+      }
+      if (moreLinks && moreLinks !== "undefined" && moreLinks !== "") {
+        html += `<a class="link-btn" href="${moreLinks}" target="_blank" rel="noopener">${EXTERNAL_ICON} More links</a>`;
+      }
+      return html ? `<div class="card-links">${html}</div>` : "";
+    }
+
+    function renderSingleCard(ev) {
+      const { day, month } = parseSingleDate(ev.date);
+      return `
+        <div class="card-single">
+          <div class="date-block">
+            <span class="day">${day}</span>
+            <span class="month">${month}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${ev.title}</div>
+            ${ev.description ? `<div class="card-description">${ev.description}</div>` : ""}
+            ${linksHtml(ev.readMore, ev.moreLinks)}
+          </div>
+        </div>`;
+    }
+
+    function renderRangeCard(ev) {
+      return `
+        <div class="card-range">
+          <div class="date-range-block">
+            <span class="range-text">${ev.date}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${ev.title}</div>
+            ${ev.description ? `<div class="card-description">${ev.description}</div>` : ""}
+            ${linksHtml(ev.readMore, ev.moreLinks)}
+          </div>
+        </div>`;
+    }
+
+    function renderMonthCard(ev) {
+      const badge = parseMonthBadge(ev.date);
+      const embedUrl = toEmbedUrl(ev.videoLink);
+      const videoHtml = embedUrl
+        ? `<iframe src="${embedUrl}" title="${ev.title}" frameborder="0" allowfullscreen></iframe>`
+        : `<div class="no-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>`;
+
+      return `
+        <div class="card-month">
+          <div class="card-month-video">${videoHtml}</div>
+          <div class="card-month-body">
+            <span class="month-badge">${badge}</span>
+            <div class="card-title">${ev.title}</div>
+            ${ev.description ? `<div class="card-description">${ev.description}</div>` : ""}
+            ${linksHtml(ev.readMore, ev.moreLinks)}
+          </div>
+        </div>`;
+    }
+
+    fetch(FEED_URL)
+      .then(r => r.json())
+      .then(data => {
+        const events    = data.events || [];
+        const container = document.getElementById("event-container");
+
+        if (!events.length) {
+          container.innerHTML = "<p class='status-msg'>No upcoming events.</p>";
+          return;
+        }
+
+        container.innerHTML = events.map(ev => {
+          const type = detectDateType(ev.date);
+          if (type === "month")  return renderMonthCard(ev);
+          if (type === "range")  return renderRangeCard(ev);
+          return renderSingleCard(ev);
+        }).join("");
+      })
+      .catch(() => {
+        document.getElementById("event-container").innerHTML =
+          "<p class='error-msg'>Unable to load events. Please try again later.</p>";
+      });
+  </script>
+</body>
+</html>
