@@ -22,34 +22,32 @@
     /* ── MONTH-LONG CARD ── */
     .card-month {
       display: flex;
-      align-items: stretch;
+      flex-direction: column;
       border: 1px solid #e0e0e0;
       border-radius: 10px;
       background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       overflow: hidden;
     }
+    
     .card-month-video {
-      width: 200px;
-      min-width: 200px;
+      width: 100%;
       background: #ede8f5;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
     }
     
     .card-month-video iframe {
       width: 100%;
-      height: 100%;
-      min-height: 160px;
+      height: 250px;
       border: none;
       display: block;
     }
     
     .card-month-video .no-video {
       width: 100%;
-      min-height: 160px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
