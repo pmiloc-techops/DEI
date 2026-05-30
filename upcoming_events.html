@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: transparent;
+      line-height: 1.6;
+      color: #222;
+    }
+    #event-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 4px 0;
+    }
+
+    /* ── SINGLE-DAY CARD ── */
+    .card-single {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .date-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      background: #f5f0ff;
+      border-radius: 8px;
+      padding: 8px 6px;
+      flex-shrink: 0;
+    }
+    .date-block .day {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2d2d2d;
+      line-height: 1;
+    }
+    .date-block .month {
+      font-size: 11px;
+      font-weight: 600;
+      color: #7c5cbf;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    /* ── DATE RANGE CARD ── */
+    .card-range {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .date-range-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      background: #f5f0ff;
+      border-radius: 8px;
+      padding: 8px 6px;
+      flex-shrink: 0;
+    }
+    .date-range-block .range-text {
+      font-size: 11px;
+      font-weight: 700;
+      color: #7c5cbf;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ── SHARED CARD BODY ── */
+    .card-body { flex: 1; min-width: 0; }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+    .card-description {
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5b21b6;
+      text-decoration: none;
+      border: 1.5px solid #d0b8f5;
+      border-radius: 6px;
+      padding: 4px 12px;
+      background: #fff;
+      transition: background 0.15s, color 0.15s;
+    }
+    .link-btn:hover { background: #f3e8ff; color: #4c1d95; }
+    .link-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    .status-msg { color: #555; font-size: 14px; }
+    .error-msg  { color: #c00; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div id="event-container">
+    <p class="status-msg">Loading events...</p>
+  </div>
+
+  <script>
+    const FEED_URL = "https://cdn.jsdelivr.net/gh/pmiloc-techops/DEI@main/dei-data.json";
+
+    const EXTERNAL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+    const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+
+    function detectDateType(dateStr) {
+      const s = dateStr.trim();
+      if (/^[A-Za-z]+[,\s]*(\d{4})?$/.test(s)) return "month";
+      if (/to|–|—/.test(s) || /\d\s*-\s*\d/.test(s)) return "range";
+      return "single";
+    }
+
+    function parseSingleDate(dateStr) {
+      const s = dateStr.trim();
+      const monthMatch = s.match(/[A-Za-z]+/);
+      const dayMatch   = s.match(/\d+/);
+      if (!monthMatch || !dayMatch) return { day: "", month: "" };
+      const d = new Date(`${monthMatch[0]} ${dayMatch[0]}, 2000`);
+      const month = isNaN(d) ? monthMatch[0].substring(0,3).toUpperCase() : MONTHS[d.getMonth()];
+      return { day: dayMatch[0], month };
+    }
+
+    function linksHtml(readMore, moreLinks) {
+      let html = "";
+      if (readMore && readMore !== "undefined" && readMore !== "")
+        html += `<a class="link-btn" href="${readMore}" target="_blank" rel="noopener">${EXTERNAL_ICON} Read more</a>`;
+      if (moreLinks && moreLinks !== "undefined" && moreLinks !== "")
+        html += `<a class="link-btn" href="${moreLinks}" target="_blank" rel="noopener">${EXTERNAL_ICON} More links</a>`;
+      return html ? `<div class="card-links">${html}</div>` : "";
+    }
+
+    function renderSingleCard(ev) {
+      const { day, month } = parseSingleDate(ev.date);
+      return `
+        <div class="card-single">
+          <div class="date-block">
+            <span class="day">${day}</span>
+            <span class="month">${month}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${ev.title}</div>
+            ${ev.description ? `<div class="card-description">${ev.description}</div>` : ""}
+            ${linksHtml(ev.readMore, ev.moreLinks)}
+          </div>
+        </div>`;
+    }
+
+    function renderRangeCard(ev) {
+      return `
+        <div class="card-range">
+          <div class="date-range-block">
+            <span class="range-text">${ev.date}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${ev.title}</div>
+            ${ev.description ? `<div class="card-description">${ev.description}</div>` : ""}
+            ${linksHtml(ev.readMore, ev.moreLinks)}
+          </div>
+        </div>`;
+    }
+
+    fetch(FEED_URL)
+      .then(r => r.json())
+      .then(data => {
+        const events    = (data.events || []).filter(ev => {
+          const type = detectDateType(ev.date);
+          return type === "single" || type === "range";
+        });
+        const container = document.getElementById("event-container");
+
+        if (!events.length) {
+          container.innerHTML = "<p class='status-msg'>No upcoming events.</p>";
+          return;
+        }
+
+        container.innerHTML = events.map(ev => {
+          return detectDateType(ev.date) === "range"
+            ? renderRangeCard(ev)
+            : renderSingleCard(ev);
+        }).join("");
+      })
+      .catch(() => {
+        document.getElementById("event-container").innerHTML =
+          "<p class='error-msg'>Unable to load events. Please try again later.</p>";
+      });
+  </script>
+</body>
+</html>
