@@ -122,23 +122,27 @@
     .error-msg  { color: #c00; font-size: 14px; }
 
     @media (max-width: 600px) {
-  .card-month {
-    flex-direction: column;
-  }
-
-  .card-month-video {
-    width: 100%;
-    min-width: 100%;
-  }
-
-  .card-month-video iframe {
-    height: 200px;
-  }
-
-  .card-month-video .no-video {
-    height: 80px;
-  }
-}
+      .card-month {
+        flex-direction: column;
+      }
+      .card-month-video {
+        width: 100%;
+        min-width: 100%;
+        min-height: unset;
+      }
+      .card-month-video iframe {
+        width: 100%;
+        height: 180px;
+        min-height: unset;
+      }
+      .card-month-video .no-video {
+        height: 60px;
+        min-height: unset;
+      }
+      .card-month-body {
+        padding: 12px 14px;
+      }
+    }
   </style>
 </head>
 <body>
