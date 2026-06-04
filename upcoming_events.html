@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Upcoming Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
       background: transparent;
       line-height: 1.6;
-      color: #222;
+      color: #000000;
+      font-size: 1rem;
     }
     #event-container {
       display: flex;
@@ -59,16 +61,19 @@
     /* ── SHARED CARD BODY ── */
     .card-body { flex: 1; min-width: 0; }
     .card-title {
-      font-size: 16px;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
       font-weight: 700;
-      color: #1a1a1a;
+      color: #000000;
       margin-bottom: 5px;
     }
     .card-description {
-      font-size: 13.5px;
-      color: #444;
-      line-height: 1.55;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      color: #000000;
+      line-height: 1.6;
       margin-bottom: 8px;
+      text-align: justify;
     }
     .card-links {
       display: flex;
@@ -80,7 +85,8 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: 13px;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 0.875rem;
       font-weight: 600;
       color: #5b21b6;
       text-decoration: none;
@@ -93,8 +99,8 @@
     .link-btn:hover { background: #f3e8ff; color: #4c1d95; }
     .link-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-    .status-msg { color: #555; font-size: 14px; }
-    .error-msg  { color: #c00; font-size: 14px; }
+    .status-msg { color: #000000; font-size: 1rem; font-family: 'Open Sans', Arial, sans-serif; }
+    .error-msg  { color: #c00; font-size: 1rem; font-family: 'Open Sans', Arial, sans-serif; }
   </style>
 </head>
 <body>
@@ -111,9 +117,9 @@
 
     function detectDateType(dateStr) {
       const s = dateStr.trim();
-      if (!/\d/.test(s)) return "month";     // no numbers = month
-      if (/to|–|—/.test(s)) return "month"; // range = month
-      return "single";                       // single day only
+      if (!/\d/.test(s)) return "month";
+      if (/to|–|—/.test(s)) return "month";
+      return "single";
     }
 
     function parseSingleDate(dateStr) {
