@@ -159,11 +159,11 @@
 
     function detectDateType(dateStr) {
       const s = dateStr.trim();
-      if (/^[A-Za-z]+[,\s]*(\d{4})?$/.test(s)) return "month";
-      if (/to|–|—/.test(s) || /\d\s*-\s*\d/.test(s)) return "range";
-      return "single";
+      // If it contains a day number anywhere, it's a specific date or range
+      if (/\d/.test(s)) return "single";
+      // No numbers at all = month-only
+      return "month";
     }
-
     function parseMonthBadge(dateStr) {
       const s = dateStr.trim().replace(",", "");
       const parts = s.split(/\s+/);
