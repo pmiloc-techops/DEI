@@ -120,6 +120,25 @@
 
     .status-msg { color: #555; font-size: 14px; }
     .error-msg  { color: #c00; font-size: 14px; }
+
+    @media (max-width: 600px) {
+  .card-month {
+    flex-direction: column;
+  }
+
+  .card-month-video {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .card-month-video iframe {
+    height: 200px;
+  }
+
+  .card-month-video .no-video {
+    height: 80px;
+  }
+}
   </style>
 </head>
 <body>
