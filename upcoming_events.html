@@ -142,10 +142,7 @@
     const MONTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 
     function detectDateType(dateStr) {
-      const s = dateStr.trim();
-      if (!/\d/.test(s)) return "month"; // no numbers = month-long
-      if (/to|–|—/.test(s)) return "range"; // has numbers + "to" = range
-      return "single"; // has numbers, no range = single day
+      const events = (data.events || []).filter(ev => detectDateType(ev.date) === "single");
     }
 
     function parseSingleDate(dateStr) {
@@ -211,11 +208,7 @@
           return;
         }
 
-        container.innerHTML = events.map(ev => {
-          return detectDateType(ev.date) === "range"
-            ? renderRangeCard(ev)
-            : renderSingleCard(ev);
-        }).join("");
+      container.innerHTML = events.map(ev => renderSingleCard(ev)).join("");
       })
       .catch(() => {
         document.getElementById("event-container").innerHTML =
