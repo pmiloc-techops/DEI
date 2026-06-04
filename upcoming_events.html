@@ -143,9 +143,9 @@
 
     function detectDateType(dateStr) {
       const s = dateStr.trim();
-      if (/^[A-Za-z]+[,\s]*(\d{4})?$/.test(s)) return "month";
-      if (/to|–|—/.test(s) || /\d\s*-\s*\d/.test(s)) return "range";
-      return "single";
+      if (!/\d/.test(s)) return "month"; // no numbers = month-long
+      if (/to|–|—/.test(s)) return "range"; // has numbers + "to" = range
+      return "single"; // has numbers, no range = single day
     }
 
     function parseSingleDate(dateStr) {
