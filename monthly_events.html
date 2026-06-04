@@ -191,7 +191,7 @@
     }
 
     function renderMonthCard(ev) {
-      const badge    = parseMonthBadge(ev.date);
+      const badge = /to|–|—/.test(ev.date) ? ev.date.toUpperCase() : parseMonthBadge(ev.date);
       const embedUrl = toEmbedUrl(ev.videoLink);
       const videoHtml = embedUrl
         ? `<iframe src="${embedUrl}" title="${ev.title}" frameborder="0" allowfullscreen></iframe>`
