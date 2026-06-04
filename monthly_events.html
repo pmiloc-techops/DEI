@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monthly Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
       background: transparent;
       line-height: 1.6;
-      color: #222;
+      color: #000000;
+      font-size: 1rem;
     }
     #event-container {
       display: flex;
@@ -20,7 +22,7 @@
     }
 
     /* ── MONTH-LONG CARD ── */
-      .card-month {
+    .card-month {
       display: flex;
       flex-direction: row;
       align-items: stretch;
@@ -30,7 +32,6 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       overflow: hidden;
     }
-    
     .card-month-video {
       width: 400px;
       min-width: 400px;
@@ -40,7 +41,6 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    
     .card-month-video iframe {
       width: 100%;
       height: 100%;
@@ -48,7 +48,6 @@
       border: none;
       display: block;
     }
-    
     .card-month-video .no-video {
       width: 100%;
       min-height: 160px;
@@ -72,6 +71,7 @@
     }
     .month-badge {
       display: inline-block;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
       font-size: 11px;
       font-weight: 700;
       color: #5b7e3a;
@@ -84,16 +84,19 @@
       width: fit-content;
     }
     .card-title {
-      font-size: 17px;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
       font-weight: 700;
-      color: #1a1a1a;
+      color: #000000;
       margin-bottom: 7px;
     }
     .card-description {
-      font-size: 13px;
-      color: #444;
-      line-height: 1.55;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      color: #000000;
+      line-height: 1.6;
       margin-bottom: 10px;
+      text-align: justify;
     }
     .card-links {
       display: flex;
@@ -105,7 +108,8 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: 13px;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      font-size: 0.875rem;
       font-weight: 600;
       color: #5b21b6;
       text-decoration: none;
@@ -118,8 +122,8 @@
     .link-btn:hover { background: #f3e8ff; color: #4c1d95; }
     .link-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-    .status-msg { color: #555; font-size: 14px; }
-    .error-msg  { color: #c00; font-size: 14px; }
+    .status-msg { color: #000000; font-size: 1rem; font-family: 'Open Sans', Arial, sans-serif; }
+    .error-msg  { color: #c00; font-size: 1rem; font-family: 'Open Sans', Arial, sans-serif; }
 
     @media (max-width: 600px) {
       .card-month {
@@ -163,7 +167,9 @@
       if (/to|–|—/.test(s)) return "month";
       return "single";
     }
+
     function parseMonthBadge(dateStr) {
+      if (/to|–|—/.test(dateStr)) return dateStr.toUpperCase();
       const s = dateStr.trim().replace(",", "");
       const parts = s.split(/\s+/);
       const d = new Date(`${parts[0]} 1, 2000`);
@@ -191,7 +197,7 @@
     }
 
     function renderMonthCard(ev) {
-      const badge = /to|–|—/.test(ev.date) ? ev.date.toUpperCase() : parseMonthBadge(ev.date);
+      const badge    = parseMonthBadge(ev.date);
       const embedUrl = toEmbedUrl(ev.videoLink);
       const videoHtml = embedUrl
         ? `<iframe src="${embedUrl}" title="${ev.title}" frameborder="0" allowfullscreen></iframe>`
@@ -212,7 +218,7 @@
     fetch(FEED_URL)
       .then(r => r.json())
       .then(data => {
-        const events = (data.events || []).filter(ev => detectDateType(ev.date) === "month");
+        const events    = (data.events || []).filter(ev => detectDateType(ev.date) === "month");
         const container = document.getElementById("event-container");
 
         if (!events.length) {
@@ -220,7 +226,7 @@
           return;
         }
 
-        container.innerHTML = events.map(ev => renderMonthCard(ev)).join("");
+        container.innerHTML = events.map(renderMonthCard).join("");
       })
       .catch(() => {
         document.getElementById("event-container").innerHTML =
