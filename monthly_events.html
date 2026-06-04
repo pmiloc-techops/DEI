@@ -159,10 +159,9 @@
 
     function detectDateType(dateStr) {
       const s = dateStr.trim();
-      // If it contains a day number anywhere, it's a specific date or range
-      if (/\d/.test(s)) return "single";
-      // No numbers at all = month-only
-      return "month";
+      if (!/\d/.test(s)) return "month";
+      if (/to|–|—/.test(s)) return "month";
+      return "single";
     }
     function parseMonthBadge(dateStr) {
       const s = dateStr.trim().replace(",", "");
@@ -213,7 +212,7 @@
     fetch(FEED_URL)
       .then(r => r.json())
       .then(data => {
-        const events    = (data.events || []).filter(ev => detectDateType(ev.date) === "month");
+        const events = (data.events || []).filter(ev => detectDateType(ev.date) === "month");
         const container = document.getElementById("event-container");
 
         if (!events.length) {
@@ -221,7 +220,7 @@
           return;
         }
 
-        container.innerHTML = events.map(renderMonthCard).join("");
+        container.innerHTML = events.map(ev => renderMonthCard(ev)).join("");
       })
       .catch(() => {
         document.getElementById("event-container").innerHTML =
