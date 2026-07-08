@@ -1,78 +1,69 @@
 {
   "blogs": [
     {
-      "title": "International Yoga Day",
-      "description": "The countdown to June 21 has begun! Start now. Breathe deep. Move mindfully. Today, let us celebrate this ancient practice that enhances our mental and physical well-being.  Happy International Yoga Day! Yoga holds profound benefits for both body and mind, fostering strength, flexibility, and tranquility",
-      "link": "https://heartfulness.ca/event/idy2026-mississauga/"
+      "title": "World Day Against Trafficking in Persons",
+      "description": "The 2026 World Day Against Trafficking in Persons theme, \"Trapped Behind the Scam,\" draws attention to a rapidly expanding form of human trafficking in which transnational organized crime groups exploit people to carry out industrial-scale financial fraud.  ",
+      "link": "\nhttps://www.un.org/en/observances/end-human-trafficking-day"
     },
     {
-      "title": "National Indigenous Peoples Day",
-      "description": "National Indigenous Peoples Day, observed annually on June 21 in Canada, is a day to recognize and celebrate the rich cultures, traditions, languages, knowledge, and contributions of First Nations, Inuit, and Métis Peoples.",
-      "link": "https://amapceo.on.ca/multiculturalismday"
+      "title": "World Nature Conservation Day",
+      "description": "World Nature Conservation Day arrives every July 28, urging us to protect our planet’s invaluable natural resources and biodiversity. This day highlights the critical need for a healthy environment to sustain a stable society. Take action by supporting conservation efforts, reducing your ecological footprint, and advocating for sustainable practices.",
+      "link": "https://nationaltoday.com/world-nature-conservation-day/#:~:text=World%20Nature%20Conservation%20Day%20is,a%20stable%20and%20healthy%20society."
     },
     {
-      "title": "World Refugee Day",
-      "description": "The occasion would be a chance to reflect on “the courage and tenacity of migrants and refugees, who bear daily witness to hope in the future.”“often contributing to revitalising their faith and promoting interreligious dialogue based on common values.",
-      "link": "\nhttps://www.unhcr.org/get-involved/take-action/world-refugee-day"
+      "title": "International Self-Care Day",
+      "description": "International Self-Care Day champions personal well-being every July 24. This global observance encourages individuals to integrate self-care into their daily routines, recognizing it as a fundamental aspect of overall health. Prioritize your mental, physical, and emotional needs today by taking a walk, meditating, or simply resting.",
+      "link": "https://nationaltoday.com/international-self-care-day/#:~:text=Self%2Dcare%20gives%20energy"
     },
     {
-      "title": "Father's day",
-      "description": "Father's Day is a special occasion dedicated to honoring the men who have played a vital role in shaping our lives. Fathers are often the quiet pillars of strength, providing guidance, protection, and unwavering support through every stage of our journey",
-      "link": "https://www.farmersalmanac.com/when-fathers-day"
+      "title": "Nelson Mandela Day ",
+      "description": "We celebrate Nelson Mandela International Day every year to shine light on the legacy of a man who changed the 20th century and helped shape the 21st. This is a moment for all to renew with the values that inspired Nelson Mandela. Absolute determination. A deep commitment to justice, human rights and fundamental freedoms.",
+      "link": "https://en.unesco.org/commemorations/mandeladay"
     },
     {
-      "title": "Pride month",
-      "description": "June is Lesbian, Gay, Bisexual, and Transgender Pride Month, established to recognize the impact that gay, lesbian, bisexual and transgender individuals have had on the world. All In is the official theme for The Pride Toronto 2025 Festival! ",
-      "link": "https://www.statcan.gc.ca/o1/en/plus/4192-pride-canada"
+      "title": "International Non-Binary People's Day ",
+      "description": "Non-Binary People’s Day is an annual celebration of non-binary genders and identities. It was first observed on July 14th, 2012 and is celebrated every year on the same day. The day is intended to celebrate and honour the existence of non-binary people and to raise awareness of the unique challenges they face in society. ",
+      "link": "https://heckinunicorn.com/blogs/heckin-unicorn-blog/when-is-non-binary-people-s-day-2025-and-what-does-it-mean?srsltid=AfmBOoohU-mQt8M732vL1V5DDWI0DOOAmBKRYcaXcASOTLI-HI7X0PV6&currency=CAD#google_vignette"
     },
     {
-      "title": "Filipino Heritage Month",
-      "description": "Filipino Heritage Month is observed in Canada during the month of June to recognize, celebrate and raise awareness about the Filipino community in Canada and their valuable contributions throughout Canadian history.This month acknowledges the long and rich history of Filipino Canadians and their contributions to Canada. ",
-      "link": "https://westernfinancialgroup.ca/Let-s-Celebrate-Filipino-Heritage-Month"
+      "title": "World Population Day",
+      "description": "World Population Day 2026 shines a spotlight on one of the most critical issues facing our planet: . This international awareness event encourages everyone to consider how population trends impact health, development, and the environment, while inspiring positive action for a more sustainable future",
+      "link": "https://www.awarenessdays.com/awareness-days-calendar/world-population-day-2025/"
     },
     {
-      "title": "Indigenous History Month ",
-      "description": "June is National Indigenous History Month in Canada, an opportunity to learn about the unique cultures, traditions and experiences of First Nations, Inuit and Métis. It's a time to honour tesilience of Indigenous Peoples, who have lived on this land since time immemorial and whose presence continues to impact the evolving Canada.",
-      "link": "https://www.rcaanc-cirnac.gc.ca/eng/1466616436543/1534874922512"
-    },
-    {
-      "title": "Canadian Multiculturalism day",
-      "description": "It promotes understanding and appreciation among Canadians of all backgrounds through cultural events and activities. On this significant day, Canada honors the rich cultures, languages, and contributions of First Nations, Inuit, and Métis peoples.",
-      "link": "https://www.canada.ca/en/canadian-heritage/campaigns/multiculturalism-day.html"
+      "title": "Canada Day",
+      "description": "Canada Day 2026 was celebrated on Wednesday, July 1, 2026, marking the 159th anniversary of the Canadian Confederation. Canada Day is celebrated on July 1st and marks the anniversary of Canadian Confederation, which took place in 1867",
+      "link": "https://www.canada.ca/en/canadian-heritage/campaigns/canada-day.html"
     }
   ],
   "videos": [
     {
-      "title": "Canadian Multiculturalism day",
-      "url": "https://youtu.be/MOY6Pji1AmM?si=JZ9Xf2xhfMY_fe0t"
+      "title": "Canada Day",
+      "url": "https://youtu.be/WCo6uRc2NMI?si=dvqveWq1zDl56fXo"
     },
     {
-      "title": "Indigenous History Month ",
-      "url": "https://youtu.be/YRj7Mv8hdik?si=yzykjkr-XMb0MEr7"
+      "title": "World Population Day",
+      "url": "https://youtu.be/O2rzwjbWW-c?si=LdAJhO7YokEos8Vm"
     },
     {
-      "title": "Filipino Heritage Month",
-      "url": "https://youtu.be/SedY7FYxPTc?si=MLYJf4U-5jn41fbZ"
+      "title": "International Non-Binary People's Day ",
+      "url": "https://youtu.be/5tqGRGcFXEk?si=b7yug_Otnjh_m8Kd"
     },
     {
-      "title": "Pride month",
-      "url": "https://youtu.be/imRrUE75MgY?si=0Aj98ZCUxstcDcbc"
+      "title": "Nelson Mandela Day ",
+      "url": "https://youtu.be/DN3wypumNTw?si=sRJOeY8U-DAJxYPp"
     },
     {
-      "title": "Father's day",
-      "url": "https://youtu.be/ZKkmJcaRn9U?si=PyqSamV_tIJPLNv4"
+      "title": "International Self-Care Day",
+      "url": "https://youtu.be/GdlxciljN04?si=2azPpinpGSy42U4r"
     },
     {
-      "title": "World Refugee Day",
-      "url": "https://youtu.be/-uhzxnWGhUs?si=isHpQ-42W3oNtfIr"
+      "title": "World Nature Conservation Day",
+      "url": "https://youtube.com/shorts/7Ys6yLYz7-c?si=oZaUr1bCvV2UZ6NA"
     },
     {
-      "title": "National Indigenous Peoples Day",
-      "url": "https://youtu.be/v3eLz1pYc-c?si=oK1put8PQ-ZGpgR5"
-    },
-    {
-      "title": "International Yoga Day",
-      "url": "https://youtu.be/r9bmhBgFjRU?si=m8rdg4L0AerFbnvw"
+      "title": "World Day Against Trafficking in Persons",
+      "url": "https://youtu.be/yckcxl8CvhI?si=QuDOSyDukj78AVHW"
     }
   ],
   "events": [
